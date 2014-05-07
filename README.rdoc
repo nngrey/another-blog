@@ -1,0 +1,3 @@
+== Blog
+
+One of many blogs to practice Rails.
