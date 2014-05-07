@@ -10,8 +10,9 @@
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="containter">
       <%= link_to "Blog", root_url, :class => "navbar-text navbar-left" %>
-      <%= link_to "New Post", new_post_path, :class => "navbar-text navbar-left" %>
-
+      <% if can? :create, @post %>
+        <%= link_to "New Post", new_post_path, :class => "navbar-text navbar-left" %>
+      <% end %>
     </div>
 
     <div class="nav navbar-nav navbar-right">
