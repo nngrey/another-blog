@@ -17,10 +17,11 @@
 
 <% if @post.comments != nil %>
   <h5>Comments</h5>
-  <% @post.comments.each do |comment| %>
-    <%= comment.name %>, <%= comment.date %>
-    <p><%= comment.body %></p>
-  <% end %>
+  <div id="comments_list">
+    <% @post.comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  </div>
 <% end %>
 
 
