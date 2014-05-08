@@ -10,3 +10,17 @@
                                         method: 'delete',
                                         :class => "btn btn-danger" %>
 <% end %>
+
+<h4>Add a comment</h4>
+
+<%= render 'comments/form' %>
+
+<% if @post.comments != nil %>
+  <h5>Comments</h5>
+  <% @post.comments.each do |comment| %>
+    <%= comment.name %>, <%= comment.date %>
+    <p><%= comment.body %></p>
+  <% end %>
+<% end %>
+
+
