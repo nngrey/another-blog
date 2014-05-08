@@ -1,5 +1,6 @@
 <h4><%= @post.title %></h4>
-<%= @post.date %>
+<% time = @post.date %>
+<%= time.strftime("Published on %B,%e %Y at %l:%M%p") %>
 <p><%= @post.body %></p>
 <% if can? :update, @post %>
   <%= link_to "edit", edit_post_path(@post), :class => "btn btn-primary" %>
