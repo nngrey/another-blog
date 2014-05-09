@@ -1,6 +1,7 @@
 <h4><%= @post.title %></h4>
 <% time = @post.date %>
 <%= time.strftime("Published on %B,%e %Y at %l:%M%p") %>
+<div><%= image_tag @post.image.url(:medium) %></div>
 <p><%= @post.body %></p>
 <% if can? :update, @post %>
   <%= link_to "edit", edit_post_path(@post), :class => "btn btn-primary" %>
@@ -11,10 +12,15 @@
                                         method: 'delete',
                                         :class => "btn btn-danger" %>
 <% end %>
+<hr>
 
-<h4>Add a comment</h4>
+<% if current_user != nil %>
+  <h4>Add a comment</h4>
+  <%= render 'comments/form' %>
+<% else %>
+  <h5>Login to post a comment!</h5>
+<% end %>
 
-<%= render 'comments/form' %>
 
 <% if @post.comments != nil %>
   <h5>Comments</h5>

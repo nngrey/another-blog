@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      flash[:notice] = "New comment created."
+      # flash[:notice] = "New comment created."
       respond_to do |format|
         format.html { redirect_to post_path(@comment.post_id) }
         format.js
@@ -26,15 +26,16 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
     @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
   end
 
   def update
     @comment = Comment.find(params[:id])
+    # @post = Post.find(params[:comment][:post_id])
     if @comment.update(comment_params)
       flash[:notice]="Comment updated."
-      redirect_to post_path(@comment.post_id)
+      render :js => "window.location = '/posts/#{@comment.post_id}'"
     else
       render 'edit'
     end

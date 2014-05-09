@@ -1,5 +1,10 @@
 <h1>Posts</h1>
 
-<% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %>
+<%= Post.last.title %>
+
+<% num = @posts.length - 1 %>
+<% @posts.each_with_index do |post, index| %>
+  <% if index < num %>
+  <h4><%= link_to post.title, post_path(post) %></h4>
+  <% end %>
 <% end %>

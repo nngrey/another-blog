@@ -14,6 +14,7 @@ gem 'devise'
 gem 'textacular'
 gem 'rest-client'
 gem 'cancancan', '~> 1.7'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
   gem 'better_errors'
