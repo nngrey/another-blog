@@ -20,8 +20,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
-    @post = Post.find(params[:id])
+    if (params[:id]) == nil
+      @post = Post.last
+      @comment = Comment.new
+    else
+      @comment = Comment.new
+      @post = Post.find(params[:id])
+    end
   end
 
   def edit

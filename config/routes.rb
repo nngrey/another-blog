@@ -1,6 +1,6 @@
 Blog::Application.routes.draw do
 
-  root :to => 'posts#index'
+  root :to => 'posts#show'
 
   devise_for :users do
       resources :comments
