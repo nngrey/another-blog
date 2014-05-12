@@ -7,9 +7,9 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :create, :comment
-      can :edit, :comment, :user_id => user.id
-      can :delete, :comment, :user_id => user.id
+      can :create, Comment
+      can :edit, Comment, :user_id => user.id
+      can :delete, Comment, :user_id => user.id
     end
   end
 end
