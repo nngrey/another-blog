@@ -1,0 +1,4 @@
+%h1 Posts
+
+- @posts.each do |post|
+	%h4= link_to post.title, post_path(post)

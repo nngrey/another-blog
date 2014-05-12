@@ -1,0 +1,15 @@
+= render 'layouts/errors', :object => @post 
+
+= form_for @post, :html => { :multipart => true } do |f| 
+  = f.label :title, "Title"
+  = f.text_field :title
+  %br/
+  = f.label :date, "Date"
+  = f.datetime_field :date, :value => Date.today
+  %br/
+  = f.label :body, "Body"
+  = f.text_area :body
+  %br/
+  = f.file_field :image
+  = f.submit(:class => 'btn btn-primary')
+
