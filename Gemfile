@@ -16,6 +16,7 @@ gem 'rest-client'
 gem 'cancancan', '~> 1.7'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
+gem 'haml'
 
 
 group :development do
