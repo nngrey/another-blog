@@ -6,10 +6,11 @@ class Ability
     if user.admin
       can :manage, :all
     else
-      can :read, :all
-      can :create, Comment
+      can :manage, Comment, :user_id => user.id
       can :edit, Comment, :user_id => user.id
       can :delete, Comment, :user_id => user.id
+      can :read, :all
+      can :create, Comment
     end
   end
 end
