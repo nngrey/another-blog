@@ -1,0 +1,23 @@
+- if @post != nil
+  %h4= @post.title
+  - time = @post.date
+  = time.strftime("Published on %B,%e %Y at %l:%M%p")
+  %div= image_tag @post.image.url(:medium)
+  %p= @post.body
+  - if can? :update, @post
+    = link_to "edit", edit_post_path(@post), :class => "btn btn-primary"
+  - if can? :destroy, @post
+    = link_to "delete", post_path(@post), data: { confirm: 'Are you sure?'}, |
+      method: 'delete',                                                      |
+      :class => "btn btn-danger"                                             |
+  %hr/
+  - if current_user != nil
+    %h4 Add a comment
+    = render 'comments/form'
+  - else
+    %h5 Login to post a comment!
+  - if @post.comments != nil
+    %h5 Comments
+    #comments_list
+      - @post.comments.each do |comment|
+        = render comment
