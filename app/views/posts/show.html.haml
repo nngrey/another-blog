@@ -1,9 +1,9 @@
 - if @post != nil
   %h4= @post.title
   - time = @post.date
-  = time.strftime("Published on %B,%e %Y at %l:%M%p")
-  %div= image_tag @post.image.url(:medium)
-  %p= @post.body
+  = time.strftime("Published on %B, %e %Y")
+  %div= image_tag @post.image.url(:large)
+  %p= simple_format (@post.body)
   - if can? :update, @post
     = link_to "edit", edit_post_path(@post), :class => "btn btn-primary"
   - if can? :destroy, @post
