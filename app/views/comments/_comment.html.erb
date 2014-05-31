@@ -1,5 +1,5 @@
 <% time = comment.date %>
-<strong><%= comment.name %></strong> said at <%= time.strftime("%l:%M%p on %B,%e %Y") %>
+<strong><%= comment.name %></strong> said at <%= time.strftime("on %B %e, %Y") %>
 
 <% if can? :edit, comment %>
   <%= link_to "update", edit_post_comment_path(comment.post, comment), :class => "btn-xs btn-warning" %>
