@@ -1,4 +1,6 @@
 %h1 Posts
 
 - @posts.each do |post|
-	%h4= link_to post.title, post_path(post)
+  %span.list-title= link_to post.title, post_path(post)
+  - time = post.date
+  = time.strftime(" - posted %B, %e %Y")

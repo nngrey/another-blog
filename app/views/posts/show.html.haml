@@ -16,7 +16,7 @@
     = render 'comments/form'
   - else
     %h5 Login to post a comment!
-  - if @post.comments != nil
+  - if @post.comments.length > 0
     %h5 Comments
     #comments_list
       - @post.comments.each do |comment|

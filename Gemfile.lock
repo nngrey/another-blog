@@ -96,6 +96,7 @@ GEM
       i18n (~> 0.5)
     haml (4.0.3)
       tilt
+    high_voltage (2.1.0)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.1.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   haml
+  high_voltage (~> 2.1.0)
   jquery-rails
   jquery-turbolinks
   launchy

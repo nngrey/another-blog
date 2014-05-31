@@ -11,6 +11,7 @@
     <div class="navbar-header">
       <%= link_to "Blog", root_url, :class => "navbar-text navbar-left" %>
       <%= link_to "All Posts", posts_path, :class => "navbar-text navbar-left" %>
+      <%= link_to "About", page_path('about'), :class => "navbar-text navbar-left" %>
       <% if can? :create, @post %>
         <%= link_to "New Post", new_post_path, :class => "navbar-text navbar-left" %>
       <% end %>
