@@ -15,9 +15,12 @@
     %h4 Add a comment
     = render 'comments/form'
   - else
-    %h5 Login to post a comment!
+    %span#login-link= link_to "Login", new_user_session_path
+    = "to post a comment"
   - if @post.comments.length > 0
-    %h5 Comments
+    %h4 Comments
     #comments_list
       - @post.comments.each do |comment|
         = render comment
+
+
