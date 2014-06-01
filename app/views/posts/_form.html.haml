@@ -8,7 +8,7 @@
   = f.datetime_field :date, :value => Date.today
   %br/
   = f.label :body, "Body"
-  = f.text_area :body
+  = f.text_area :body, :cols => "100", :rows => "20"
   %br/
   = f.file_field :image
   = f.submit(:class => 'btn btn-primary')
