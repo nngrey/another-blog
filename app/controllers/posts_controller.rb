@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def show
     if (params[:id]) == nil
-      @post = Post.where(publish: true).order('id ASC').first
+      @post = Post.where(publish: true).order('id DESC').first
       @comment = Comment.new
     else
       @comment = Comment.new
