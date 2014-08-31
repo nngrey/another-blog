@@ -9,7 +9,8 @@ class Ability
       can :manage, Comment, :user_id => user.id
       # can :edit, Comment, :user_id => user.id
       # can :delete, Comment, :user_id => user.id
-      can :read, :all
+      can :read, Comment
+      can :read, Post, :publish => true
       can :create, Comment
     end
   end

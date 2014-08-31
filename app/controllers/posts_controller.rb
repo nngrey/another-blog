@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def show
     if (params[:id]) == nil
-      @post = Post.last
+      @post = Post.where(publish: true).order('id ASC').first
       @comment = Comment.new
     else
       @comment = Comment.new
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :date, :body, :image, :date)
+    params.require(:post).permit(:title, :date, :body, :image, :date, :publish)
   end
 
 end

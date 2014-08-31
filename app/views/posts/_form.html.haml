@@ -10,6 +10,14 @@
   = f.label :body, "Body"
   = f.text_area :body, :cols => "100", :rows => "20"
   %br/
+  = f.label :image, 'Image'
   = f.file_field :image
+  = f.label :publish, 'Post status'
+  %br/
+  = f.radio_button :publish, false
+  = label :publish, 'Edit'
+  = f.radio_button :publish, true
+  = label :publish, 'Published'
+  %br/
   = f.submit(:class => 'btn btn-primary')
 

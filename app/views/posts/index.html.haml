@@ -1,6 +1,7 @@
 %h1 Posts
 
 - @posts.each do |post|
-  %span.list-title= link_to post.title, post_path(post)
-  - time = post.date
-  = time.strftime(" - posted %B, %e %Y")
+  - if post.publish == true
+    %span.list-title= link_to post.title, post_path(post)
+    - time = post.date
+    = time.strftime(" - posted %B, %e %Y")
