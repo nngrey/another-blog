@@ -1,7 +1,9 @@
 %h1 Posts
 
 - @posts.each do |post|
-  - if post.publish == true
+  %br
+  - if can? :read, post
     %span.list-title= link_to post.title, post_path(post)
     - time = post.date
-    = time.strftime(" - posted %B, %e %Y")
+    %span>= time.strftime(", %B, %e %Y")
+    %em= post.publish ? "" : " - unpublished"
