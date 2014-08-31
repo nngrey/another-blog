@@ -9,7 +9,8 @@
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-      <%= link_to "Blog", root_url, :class => "navbar-text navbar-left" %>
+      <%= link_to image_tag("ruby3.png", :id => 'ruby', :height => '25px', :class => "navbar-text navbar-left"), root_url %>
+      <%= link_to "Ruby Newbie", root_url, :class => "navbar-brand" %>
       <%= link_to "All Posts", posts_path, :class => "navbar-text navbar-left" %>
       <%= link_to "About", page_path('about'), :class => "navbar-text navbar-left" %>
       <% if can? :create, @post %>
